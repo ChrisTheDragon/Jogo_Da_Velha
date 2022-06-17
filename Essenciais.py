@@ -33,6 +33,7 @@ pygame.display.set_caption('Jogo da Velha')
 # MUSICA
 som_vitoria = pygame.mixer.Sound('Sons/vitoria_1.wav')
 som_empate = pygame.mixer.Sound('Sons/empate_1.wav')
+som_empate.set_volume(0.1)
 
 # IMAGENS
 # -> Placar
