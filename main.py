@@ -25,6 +25,7 @@ pygame.display.set_caption('Jogo da Velha')
 fonte1 = pygame.font.SysFont('Comic Sans MS', 40)
 fonte2 = pygame.font.SysFont('Comic Sans MS', 15)
 fonte3 = pygame.font.SysFont('Comic Sans MS', 45)
+fonte4 = pygame.font.SysFont('Times New Roman', 15)
 
 # MUSICA
 pygame.mixer.music.set_volume(0.05)
@@ -62,6 +63,19 @@ def janela(tela):
     pygame.draw.rect(tela, ex.purpura, (480, 0, 160, 640))
     tela.blit(ex.O_pd_placar_r, (485, 100))  # Placar O
     tela.blit(ex.X_pd_placar_r, (485, 150))  # Placar X
+    mens1 = 'Feito por:'
+    mens2 = 'Christian Marinho'
+    mens3 = '&'
+    mens4 = 'Leticia Costa'
+    texto1 = fonte4.render(mens1, True, ex.branco)
+    texto2 = fonte4.render(mens2, True, ex.branco)
+    texto3 = fonte4.render(mens3, True, ex.branco)
+    texto4 = fonte4.render(mens4, True, ex.branco)
+    tela.blit(texto1, (530, 410))
+    tela.blit(texto2, (500, 425))
+    tela.blit(texto3, (550, 440))
+    tela.blit(texto4, (515, 455))
+
 
 
 def imp_peca(pos):
@@ -103,13 +117,12 @@ def jogada(ind, pos):
     # Faz uma jogada e muda para o oponete
     global ESCOLHA, VEZ, JOGADAS
     if tabuleiro[ind] == 'X':  # Se o click foi em uma celula que ja esta marcada, não faz nada
-        print('X')
+        pass
     elif tabuleiro[ind] == 'O':
-        print('O')
+        pass
     else:  # se o click foi em uma celula vazia, marca a celula e muda a vez pro oponente
         tabuleiro[ind] = ESCOLHA
         imp_peca(pos)  # imprime na posição marcada
-        print(tabuleiro)
         if VEZ == 'JOG1':
             VEZ = 'JOG2'
         else:
@@ -207,7 +220,7 @@ def linha_vitoria(tela):
 def botao_reset():
     global PONTOSO, PONTOSX
     pygame.draw.rect(tela, ex.st_preto, (510, 20, 100, 35))
-    b_resete = fonte2.render('RECOMEÇAR', True, ex.st_vermelho)  # Botão de Reset
+    b_resete = fonte2.render('RECOMEÇAR', True, ex.vermelho)  # Botão de Reset
     tela.blit(b_resete, (515, 25))
     if event.type == MOUSEBUTTONDOWN and 510 <= posi_mouse[0] <= 610 and 20 <= posi_mouse[1] <= 55:
         resete()
@@ -224,7 +237,7 @@ def resete():
     tabuleiro = [1, 2, 3,
                  4, 5, 6,
                  7, 8, 9]
-    tela.fill(ex.st_preto)
+    tela.fill(ex.preto)
 
 
 while True:
@@ -245,6 +258,7 @@ while True:
                     teste_botao()
         # JOGO
         janela(tela)  # Cria Janela
+        botao_reset()  # Cria e testa o botão reste
 
         # Testa a vitória
         if vitoria('X'):
@@ -261,12 +275,10 @@ while True:
             texto_vitoria('EMPATE')
             ESTADO = 'RESET'
 
-        botao_reset()  # Cria e testa o botão reste
-
         # Cria o Placar
-        pontX = fonte3.render(str(PONTOSX), True, ex.st_preto)
+        pontX = fonte3.render(str(PONTOSX), True, ex.preto)
         tela.blit(pontX, (540, 141))
-        pontO = fonte3.render(str(PONTOSO), True, ex.st_preto)
+        pontO = fonte3.render(str(PONTOSO), True, ex.preto)
         tela.blit(pontO, (540, 87))
 
     else:
