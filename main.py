@@ -45,44 +45,43 @@ elif DIFICULDADE == 1:
                  13, 14, 15, 16]
 
 # CÉLULAS
-if DIFICULDADE == 0:
-    quadrado1 = pygame.draw.rect(tela, ex.preto, (0, 0, 160, 160))
-    quadrado2 = pygame.draw.rect(tela, ex.preto, (160, 0, 160, 160))
-    quadrado3 = pygame.draw.rect(tela, ex.preto, (320, 0, 160, 160))
-    quadrado4 = pygame.draw.rect(tela, ex.preto, (0, 160, 160, 160))
-    quadrado5 = pygame.draw.rect(tela, ex.preto, (160, 160, 160, 160))
-    quadrado6 = pygame.draw.rect(tela, ex.preto, (320, 160, 160, 160))
-    quadrado7 = pygame.draw.rect(tela, ex.preto, (0, 320, 160, 160))
-    quadrado8 = pygame.draw.rect(tela, ex.preto, (160, 320, 160, 160))
-    quadrado9 = pygame.draw.rect(tela, ex.preto, (320, 320, 160, 160))
-    celulas = [
-        quadrado1, quadrado2, quadrado3,
-        quadrado4, quadrado5, quadrado6,
-        quadrado7, quadrado8, quadrado9
-    ]
-elif DIFICULDADE == 1:
-    quadrado1 = pygame.draw.rect(tela, ex.preto, (0, 0, 120, 120))
-    quadrado2 = pygame.draw.rect(tela, ex.preto, (120, 0, 120, 120))
-    quadrado3 = pygame.draw.rect(tela, ex.preto, (240, 0, 120, 120))
-    quadrado4 = pygame.draw.rect(tela, ex.preto, (360, 0, 120, 120))
-    quadrado5 = pygame.draw.rect(tela, ex.preto, (0, 120, 120, 120))
-    quadrado6 = pygame.draw.rect(tela, ex.preto, (120, 120, 120, 120))
-    quadrado7 = pygame.draw.rect(tela, ex.preto, (240, 120, 120, 120))
-    quadrado8 = pygame.draw.rect(tela, ex.preto, (360, 120, 120, 120))
-    quadrado9 = pygame.draw.rect(tela, ex.preto, (0, 240, 120, 120))
-    quadrado10 = pygame.draw.rect(tela, ex.preto, (120, 240, 120, 120))
-    quadrado11 = pygame.draw.rect(tela, ex.preto, (240, 240, 120, 120))
-    quadrado12 = pygame.draw.rect(tela, ex.preto, (360, 240, 120, 120))
-    quadrado13 = pygame.draw.rect(tela, ex.preto, (0, 360, 120, 120))
-    quadrado14 = pygame.draw.rect(tela, ex.preto, (120, 360, 120, 120))
-    quadrado15 = pygame.draw.rect(tela, ex.preto, (240, 360, 120, 120))
-    quadrado16 = pygame.draw.rect(tela, ex.preto, (360, 360, 120, 120))
-    celulas = [
-        quadrado1, quadrado2, quadrado3, quadrado4,
-        quadrado5, quadrado6, quadrado7, quadrado8,
-        quadrado9, quadrado10, quadrado11, quadrado12,
-        quadrado13, quadrado14, quadrado15, quadrado16
-    ]
+quadrado1_9 = pygame.draw.rect(tela, ex.preto, (0, 0, 160, 160))
+quadrado2_9 = pygame.draw.rect(tela, ex.preto, (160, 0, 160, 160))
+quadrado3_9 = pygame.draw.rect(tela, ex.preto, (320, 0, 160, 160))
+quadrado4_9 = pygame.draw.rect(tela, ex.preto, (0, 160, 160, 160))
+quadrado5_9 = pygame.draw.rect(tela, ex.preto, (160, 160, 160, 160))
+quadrado6_9 = pygame.draw.rect(tela, ex.preto, (320, 160, 160, 160))
+quadrado7_9 = pygame.draw.rect(tela, ex.preto, (0, 320, 160, 160))
+quadrado8_9 = pygame.draw.rect(tela, ex.preto, (160, 320, 160, 160))
+quadrado9_9 = pygame.draw.rect(tela, ex.preto, (320, 320, 160, 160))
+celulas9 = [
+    quadrado1_9, quadrado2_9, quadrado3_9,
+    quadrado4_9, quadrado5_9, quadrado6_9,
+    quadrado7_9, quadrado8_9, quadrado9_9
+]
+
+quadrado1 = pygame.draw.rect(tela, ex.preto, (0, 0, 120, 120))
+quadrado2 = pygame.draw.rect(tela, ex.preto, (120, 0, 120, 120))
+quadrado3 = pygame.draw.rect(tela, ex.preto, (240, 0, 120, 120))
+quadrado4 = pygame.draw.rect(tela, ex.preto, (360, 0, 120, 120))
+quadrado5 = pygame.draw.rect(tela, ex.preto, (0, 120, 120, 120))
+quadrado6 = pygame.draw.rect(tela, ex.preto, (120, 120, 120, 120))
+quadrado7 = pygame.draw.rect(tela, ex.preto, (240, 120, 120, 120))
+quadrado8 = pygame.draw.rect(tela, ex.preto, (360, 120, 120, 120))
+quadrado9 = pygame.draw.rect(tela, ex.preto, (0, 240, 120, 120))
+quadrado10 = pygame.draw.rect(tela, ex.preto, (120, 240, 120, 120))
+quadrado11 = pygame.draw.rect(tela, ex.preto, (240, 240, 120, 120))
+quadrado12 = pygame.draw.rect(tela, ex.preto, (360, 240, 120, 120))
+quadrado13 = pygame.draw.rect(tela, ex.preto, (0, 360, 120, 120))
+quadrado14 = pygame.draw.rect(tela, ex.preto, (120, 360, 120, 120))
+quadrado15 = pygame.draw.rect(tela, ex.preto, (240, 360, 120, 120))
+quadrado16 = pygame.draw.rect(tela, ex.preto, (360, 360, 120, 120))
+celulas16 = [
+    quadrado1, quadrado2, quadrado3, quadrado4,
+    quadrado5, quadrado6, quadrado7, quadrado8,
+    quadrado9, quadrado10, quadrado11, quadrado12,
+    quadrado13, quadrado14, quadrado15, quadrado16
+]
 
 
 def janela(tela):
@@ -139,64 +138,65 @@ def imp_peca(pos):
         tela.blit(X_2_peca_r, (x, y))
 
 
-def teste_botao():
-    global DIFICULDADE
+def teste_botao9():
     # testa aonde o mouse clicou
-    for p in celulas:
-        if event.type == MOUSEBUTTONDOWN and p.collidepoint(
-                posi_mouse):  # Se houver um click e o uma colisão na posição do mouse
-            if DIFICULDADE == 0:
-                if p == quadrado1:  # verifica qual foi o quadrado clicado
-                    jogada(0, [0, 0])
-                if p == quadrado2:
-                    jogada(1, [160, 0])
-                if p == quadrado3:
-                    jogada(2, [320, 0])
-                if p == quadrado4:
-                    jogada(3, [0, 160])
-                if p == quadrado5:
-                    jogada(4, [160, 160])
-                if p == quadrado6:
-                    jogada(5, [320, 160])
-                if p == quadrado7:
-                    jogada(6, [0, 320])
-                if p == quadrado8:
-                    jogada(7, [160, 320])
-                if p == quadrado9:
-                    jogada(8, [320, 320])
-            elif DIFICULDADE == 1:
-                if p == quadrado1:
-                    jogada(0, [0, 0])
-                if p == quadrado2:
-                    jogada(1, [120, 0])
-                if p == quadrado3:
-                    jogada(2, [240, 0])
-                if p == quadrado4:
-                    jogada(3, [360, 0])
-                if p == quadrado5:
-                    jogada(4, [0, 120])
-                if p == quadrado6:
-                    jogada(5, [120, 120])
-                if p == quadrado7:
-                    jogada(6, [240, 120])
-                if p == quadrado8:
-                    jogada(7, [360, 120])
-                if p == quadrado9:
-                    jogada(8, [0, 240])
-                if p == quadrado10:
-                    jogada(9, [120, 240])
-                if p == quadrado11:
-                    jogada(10, [240, 240])
-                if p == quadrado12:
-                    jogada(11, [360, 240])
-                if p == quadrado13:
-                    jogada(12, [0, 360])
-                if p == quadrado14:
-                    jogada(13, [120, 360])
-                if p == quadrado15:
-                    jogada(14, [240, 360])
-                if p == quadrado16:
-                    jogada(15, [360, 360])
+    for p in celulas9:
+        if event.type == MOUSEBUTTONDOWN and p.collidepoint(posi_mouse):  # Se houver um click e na posição do mouse
+            if p == quadrado1_9:  # verifica qual foi o quadrado clicado
+                jogada(0, [0, 0])
+            if p == quadrado2_9:
+                jogada(1, [160, 0])
+            if p == quadrado3_9:
+                jogada(2, [320, 0])
+            if p == quadrado4_9:
+                jogada(3, [0, 160])
+            if p == quadrado5_9:
+                jogada(4, [160, 160])
+            if p == quadrado6_9:
+                jogada(5, [320, 160])
+            if p == quadrado7_9:
+                jogada(6, [0, 320])
+            if p == quadrado8_9:
+                jogada(7, [160, 320])
+            if p == quadrado9_9:
+                jogada(8, [320, 320])
+
+
+def teste_botao16():
+    for p in celulas16:
+        if event.type == MOUSEBUTTONDOWN and p.collidepoint(posi_mouse):
+            if p == quadrado1:
+                jogada(0, [0, 0])
+            if p == quadrado2:
+                jogada(1, [120, 0])
+            if p == quadrado3:
+                jogada(2, [240, 0])
+            if p == quadrado4:
+                jogada(3, [360, 0])
+            if p == quadrado5:
+                jogada(4, [0, 120])
+            if p == quadrado6:
+                jogada(5, [120, 120])
+            if p == quadrado7:
+                jogada(6, [240, 120])
+            if p == quadrado8:
+                jogada(7, [360, 120])
+            if p == quadrado9:
+                jogada(8, [0, 240])
+            if p == quadrado10:
+                jogada(9, [120, 240])
+            if p == quadrado11:
+                jogada(10, [240, 240])
+            if p == quadrado12:
+                jogada(11, [360, 240])
+            if p == quadrado13:
+                jogada(12, [0, 360])
+            if p == quadrado14:
+                jogada(13, [120, 360])
+            if p == quadrado15:
+                jogada(14, [240, 360])
+            if p == quadrado16:
+                jogada(15, [360, 360])
 
 
 def jogada(ind, pos):
@@ -215,7 +215,7 @@ def jogada(ind, pos):
         else:
             VEZ = 'JOG1'
         print(tabuleiro)
-        # JOGADAS += 1
+        JOGADAS += 1
 
 
 def vitoria(jog):
@@ -389,7 +389,7 @@ def botao_reset():
 
 
 def botao_dificuldade():
-    global DIFICULDADE
+    global DIFICULDADE, PONTOSX, PONTOSO
     # desenha o botão de dificuldade
     pygame.draw.rect(tela, ex.preto, (490, 220, 60, 50))
     tela.blit(ex.dific_0_r, (493, 219))
@@ -398,9 +398,11 @@ def botao_dificuldade():
     if event.type == MOUSEBUTTONDOWN and 490 <= posi_mouse[0] <= 550 and 220 <= posi_mouse[1] <= 270:
         DIFICULDADE = 0
         resete()
+        PONTOSO, PONTOSX = 0, 0
     if event.type == MOUSEBUTTONDOWN and 570 <= posi_mouse[0] <= 630 and 220 <= posi_mouse[1] <= 270:
         DIFICULDADE = 1
         resete()
+        PONTOSO, PONTOSX = 0, 0
 
 def resete():
     # Reseta o jogo inteiro
@@ -434,10 +436,16 @@ while True:
             if event.type == MOUSEBUTTONDOWN:
                 if VEZ == 'JOG1':
                     ESCOLHA = 'X'  # Jogador 1 é X
-                    teste_botao()  # Se houver um click, verifica aonde foi o click na tela
+                    if DIFICULDADE == 0:
+                        teste_botao9()  # Se houver um click, verifica aonde foi o click na tela
+                    else:
+                        teste_botao16()
                 else:
                     ESCOLHA = 'O'  # Jogador 2 é O
-                    teste_botao()
+                    if DIFICULDADE == 0:
+                        teste_botao9()
+                    else:
+                        teste_botao16()
         # JOGO
         janela(tela)  # Cria Janela
         botao_reset()  # Cria e testa o botão reste
@@ -454,7 +462,7 @@ while True:
             texto_vitoria('O')
             ESTADO = 'RESET'
             PONTOSO += 1
-        elif JOGADAS >= 9:
+        elif JOGADAS >= 9 and DIFICULDADE == 0 or JOGADAS >= 16 and DIFICULDADE == 1:
             texto_vitoria('EMPATE')
             ESTADO = 'RESET'
 
