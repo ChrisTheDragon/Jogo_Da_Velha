@@ -29,7 +29,7 @@ fonte3 = pygame.font.SysFont('Comic Sans MS', 45)
 fonte4 = pygame.font.SysFont('Times New Roman', 15)
 
 # MUSICA
-pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.set_volume(0.6)
 pygame.mixer.music.load('Sons/background_music_2.mp3')
 pygame.mixer.music.play(-1)
 
@@ -208,13 +208,11 @@ def jogada(ind, pos):
         pass
     else:  # se o click foi em uma celula vazia, marca a celula e muda a vez pro oponente
         tabuleiro[ind] = ESCOLHA
-        print(ind)
         imp_peca(pos)  # imprime na posição marcada
         if VEZ == 'JOG1':
             VEZ = 'JOG2'
         else:
             VEZ = 'JOG1'
-        print(tabuleiro)
         JOGADAS += 1
 
 
@@ -396,13 +394,16 @@ def botao_dificuldade():
     pygame.draw.rect(tela, ex.preto, (570, 220, 60, 50))
     tela.blit(ex.dific_1_r, (575, 219))
     if event.type == MOUSEBUTTONDOWN and 490 <= posi_mouse[0] <= 550 and 220 <= posi_mouse[1] <= 270:
+        if DIFICULDADE == 1:
+            PONTOSO, PONTOSX = 0, 0
         DIFICULDADE = 0
         resete()
-        PONTOSO, PONTOSX = 0, 0
     if event.type == MOUSEBUTTONDOWN and 570 <= posi_mouse[0] <= 630 and 220 <= posi_mouse[1] <= 270:
+        if DIFICULDADE == 0:
+            PONTOSO, PONTOSX = 0, 0
         DIFICULDADE = 1
         resete()
-        PONTOSO, PONTOSX = 0, 0
+
 
 def resete():
     # Reseta o jogo inteiro
