@@ -28,8 +28,8 @@ fonte3 = pygame.font.SysFont('Comic Sans MS', 45)
 fonte4 = pygame.font.SysFont('Times New Roman', 15)
 
 # MUSICA
-pygame.mixer.music.set_volume(0.05)
-pygame.mixer.music.load('Sons/backgound_music_1.mp3')
+pygame.mixer.music.set_volume(0.5)
+pygame.mixer.music.load('Sons/background_music_2.mp3')
 pygame.mixer.music.play(-1)
 
 # TABULEIRO
@@ -61,8 +61,12 @@ def janela(tela):
     pygame.draw.line(tela, ex.vermelho, (0, 160), (480, 160), 10)
     pygame.draw.line(tela, ex.vermelho, (0, 320), (480, 320), 10)
     pygame.draw.rect(tela, ex.purpura, (480, 0, 160, 640))
-    tela.blit(ex.O_pd_placar_r, (485, 100))  # Placar O
-    tela.blit(ex.X_pd_placar_r, (485, 150))  # Placar X
+
+    tela.blit(ex.Img_lateral_r, (480, 0))  #  Barra Lateral
+    pygame.draw.rect(tela, ex.preto, (485, 90, 160, 110))
+    tela.blit(ex.O_2_placar_r, (485, 100))  # Placar O
+    tela.blit(ex.X_2_placar_r, (485, 150))  # Placar X
+
     mens1 = 'Feito por:'
     mens2 = 'Christian Marinho'
     mens3 = '&'
@@ -78,14 +82,15 @@ def janela(tela):
 
 
 
+
 def imp_peca(pos):
     # Imprime X ou O
     global VEZ
     x, y = pos
     if VEZ == 'JOG2':  # Se a vez for do Jogador 2
-        tela.blit(ex.O_pd_peca_r, (x, y))
+        tela.blit(ex.O_2_peca_r, (x, y))
     else:  # Se a vez for do jogador 1
-        tela.blit(ex.X_pd_peca_r, (x, y))
+        tela.blit(ex.X_2_peca_r, (x, y))
 
 
 def teste_botao():
@@ -169,7 +174,7 @@ def texto_vitoria(vit):
         menssagem = 'Jogador {} venceu!'.format(vit)
         texto = fonte1.render(menssagem, True, ex.branco)
         tela.blit(texto, (100, 200))
-        ex.som_vitoria.play() # som de vitória
+        ex.som_vitoria_2.play() # som de vitória
 
 
 def linha_vitoria(tela):
@@ -276,9 +281,9 @@ while True:
             ESTADO = 'RESET'
 
         # Cria o Placar
-        pontX = fonte3.render(str(PONTOSX), True, ex.preto)
+        pontX = fonte3.render(str(PONTOSX), True, ex.branco)
         tela.blit(pontX, (540, 141))
-        pontO = fonte3.render(str(PONTOSO), True, ex.preto)
+        pontO = fonte3.render(str(PONTOSO), True, ex.branco)
         tela.blit(pontO, (540, 87))
 
     else:
