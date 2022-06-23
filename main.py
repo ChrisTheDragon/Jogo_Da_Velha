@@ -13,6 +13,7 @@ JOGADAS = 0
 LINHAVIT = 0
 PONTOSX = 0
 PONTOSO = 0
+DIFICULDADE = 0
 
 # TELA
 largura = 640
@@ -33,36 +34,75 @@ pygame.mixer.music.load('Sons/background_music_2.mp3')
 pygame.mixer.music.play(-1)
 
 # TABULEIRO
-tabuleiro = [1, 2, 3,
-             4, 5, 6,
-             7, 8, 9]
+if DIFICULDADE == 0:
+    tabuleiro = [1, 2, 3,
+                 4, 5, 6,
+                 7, 8, 9]
+elif DIFICULDADE == 1:
+    tabuleiro = [1, 2, 3, 4,
+                 5, 6, 7, 8,
+                 9, 10, 11, 12,
+                 13, 14, 15, 16]
 
 # CÉLULAS
-quadrado1 = pygame.draw.rect(tela, ex.preto, (0, 0, 160, 160))
-quadrado2 = pygame.draw.rect(tela, ex.preto, (160, 0, 160, 160))
-quadrado3 = pygame.draw.rect(tela, ex.preto, (320, 0, 160, 160))
-quadrado4 = pygame.draw.rect(tela, ex.preto, (0, 160, 160, 160))
-quadrado5 = pygame.draw.rect(tela, ex.preto, (160, 160, 160, 160))
-quadrado6 = pygame.draw.rect(tela, ex.preto, (320, 160, 160, 160))
-quadrado7 = pygame.draw.rect(tela, ex.preto, (0, 320, 160, 160))
-quadrado8 = pygame.draw.rect(tela, ex.preto, (160, 320, 160, 160))
-quadrado9 = pygame.draw.rect(tela, ex.preto, (320, 320, 160, 160))
-celulas = [
-    quadrado1, quadrado2, quadrado3,
-    quadrado4, quadrado5, quadrado6,
-    quadrado7, quadrado8, quadrado9
-]
+if DIFICULDADE == 0:
+    quadrado1 = pygame.draw.rect(tela, ex.preto, (0, 0, 160, 160))
+    quadrado2 = pygame.draw.rect(tela, ex.preto, (160, 0, 160, 160))
+    quadrado3 = pygame.draw.rect(tela, ex.preto, (320, 0, 160, 160))
+    quadrado4 = pygame.draw.rect(tela, ex.preto, (0, 160, 160, 160))
+    quadrado5 = pygame.draw.rect(tela, ex.preto, (160, 160, 160, 160))
+    quadrado6 = pygame.draw.rect(tela, ex.preto, (320, 160, 160, 160))
+    quadrado7 = pygame.draw.rect(tela, ex.preto, (0, 320, 160, 160))
+    quadrado8 = pygame.draw.rect(tela, ex.preto, (160, 320, 160, 160))
+    quadrado9 = pygame.draw.rect(tela, ex.preto, (320, 320, 160, 160))
+    celulas = [
+        quadrado1, quadrado2, quadrado3,
+        quadrado4, quadrado5, quadrado6,
+        quadrado7, quadrado8, quadrado9
+    ]
+elif DIFICULDADE == 1:
+    quadrado1 = pygame.draw.rect(tela, ex.preto, (0, 0, 120, 120))
+    quadrado2 = pygame.draw.rect(tela, ex.preto, (120, 0, 120, 120))
+    quadrado3 = pygame.draw.rect(tela, ex.preto, (240, 0, 120, 120))
+    quadrado4 = pygame.draw.rect(tela, ex.preto, (360, 0, 120, 120))
+    quadrado5 = pygame.draw.rect(tela, ex.preto, (0, 120, 120, 120))
+    quadrado6 = pygame.draw.rect(tela, ex.preto, (120, 120, 120, 120))
+    quadrado7 = pygame.draw.rect(tela, ex.preto, (240, 120, 120, 120))
+    quadrado8 = pygame.draw.rect(tela, ex.preto, (360, 120, 120, 120))
+    quadrado9 = pygame.draw.rect(tela, ex.preto, (0, 240, 120, 120))
+    quadrado10 = pygame.draw.rect(tela, ex.preto, (120, 240, 120, 120))
+    quadrado11 = pygame.draw.rect(tela, ex.preto, (240, 240, 120, 120))
+    quadrado12 = pygame.draw.rect(tela, ex.preto, (360, 240, 120, 120))
+    quadrado13 = pygame.draw.rect(tela, ex.preto, (0, 360, 120, 120))
+    quadrado14 = pygame.draw.rect(tela, ex.preto, (120, 360, 120, 120))
+    quadrado15 = pygame.draw.rect(tela, ex.preto, (240, 360, 120, 120))
+    quadrado16 = pygame.draw.rect(tela, ex.preto, (360, 360, 120, 120))
+    celulas = [
+        quadrado1, quadrado2, quadrado3, quadrado4,
+        quadrado5, quadrado6, quadrado7, quadrado8,
+        quadrado9, quadrado10, quadrado11, quadrado12,
+        quadrado13, quadrado14, quadrado15, quadrado16
+    ]
 
 
 def janela(tela):
+    global DIFICULDADE
     # Imprime o tabuleiro
-    pygame.draw.line(tela, ex.vermelho, (160, 0), (160, 640), 10)
-    pygame.draw.line(tela, ex.vermelho, (320, 0), (320, 640), 10)
-    pygame.draw.line(tela, ex.vermelho, (0, 160), (480, 160), 10)
-    pygame.draw.line(tela, ex.vermelho, (0, 320), (480, 320), 10)
-    pygame.draw.rect(tela, ex.purpura, (480, 0, 160, 640))
+    if DIFICULDADE == 0:
+        pygame.draw.line(tela, ex.vermelho, (160, 0), (160, 640), 10)
+        pygame.draw.line(tela, ex.vermelho, (320, 0), (320, 640), 10)
+        pygame.draw.line(tela, ex.vermelho, (0, 160), (480, 160), 10)
+        pygame.draw.line(tela, ex.vermelho, (0, 320), (480, 320), 10)
+        pygame.draw.rect(tela, ex.purpura, (480, 0, 160, 640))
+    elif DIFICULDADE == 1:
+        pygame.draw.line(tela, ex.vermelho, (120, 0), (120, 640), 10)
+        pygame.draw.line(tela, ex.vermelho, (240, 0), (240, 640), 10)
+        pygame.draw.line(tela, ex.vermelho, (360, 0), (360, 640), 10)
+        pygame.draw.line(tela, ex.vermelho, (0, 120), (480, 120), 10)
+        pygame.draw.line(tela, ex.vermelho, (0, 240), (480, 240), 10)
+        pygame.draw.line(tela, ex.vermelho, (0, 360), (480, 360), 10)
 
-    tela.blit(ex.Img_lateral_r, (480, 0))  #  Barra Lateral
+    tela.blit(ex.Img_lateral_r, (480, 0))  # Barra Lateral
     pygame.draw.rect(tela, ex.preto, (485, 90, 160, 110))
     tela.blit(ex.O_2_placar_r, (485, 100))  # Placar O
     tela.blit(ex.X_2_placar_r, (485, 150))  # Placar X
@@ -81,41 +121,82 @@ def janela(tela):
     tela.blit(texto4, (515, 455))
 
 
-
-
 def imp_peca(pos):
     # Imprime X ou O
-    global VEZ
+    global VEZ, DIFICULDADE
     x, y = pos
     if VEZ == 'JOG2':  # Se a vez for do Jogador 2
-        tela.blit(ex.O_2_peca_r, (x, y))
+        if DIFICULDADE == 1:
+            O_2_peca_r = pygame.transform.scale(ex.O_2_peca, (120, 120))
+        else:
+            O_2_peca_r = pygame.transform.scale(ex.O_2_peca, (160, 160))
+        tela.blit(O_2_peca_r, (x, y))
     else:  # Se a vez for do jogador 1
-        tela.blit(ex.X_2_peca_r, (x, y))
+        if DIFICULDADE == 1:
+            X_2_peca_r = pygame.transform.scale(ex.X_2_peca, (120, 120))
+        else:
+            X_2_peca_r = pygame.transform.scale(ex.X_2_peca, (160, 160))
+        tela.blit(X_2_peca_r, (x, y))
 
 
 def teste_botao():
+    global DIFICULDADE
     # testa aonde o mouse clicou
     for p in celulas:
         if event.type == MOUSEBUTTONDOWN and p.collidepoint(
                 posi_mouse):  # Se houver um click e o uma colisão na posição do mouse
-            if p == quadrado1:  # verifica qual foi o quadrado clicado
-                jogada(0, [0, 0])
-            if p == quadrado2:
-                jogada(1, [160, 0])
-            if p == quadrado3:
-                jogada(2, [320, 0])
-            if p == quadrado4:
-                jogada(3, [0, 160])
-            if p == quadrado5:
-                jogada(4, [160, 160])
-            if p == quadrado6:
-                jogada(5, [320, 160])
-            if p == quadrado7:
-                jogada(6, [0, 320])
-            if p == quadrado8:
-                jogada(7, [160, 320])
-            if p == quadrado9:
-                jogada(8, [320, 320])
+            if DIFICULDADE == 0:
+                if p == quadrado1:  # verifica qual foi o quadrado clicado
+                    jogada(0, [0, 0])
+                if p == quadrado2:
+                    jogada(1, [160, 0])
+                if p == quadrado3:
+                    jogada(2, [320, 0])
+                if p == quadrado4:
+                    jogada(3, [0, 160])
+                if p == quadrado5:
+                    jogada(4, [160, 160])
+                if p == quadrado6:
+                    jogada(5, [320, 160])
+                if p == quadrado7:
+                    jogada(6, [0, 320])
+                if p == quadrado8:
+                    jogada(7, [160, 320])
+                if p == quadrado9:
+                    jogada(8, [320, 320])
+            elif DIFICULDADE == 1:
+                if p == quadrado1:
+                    jogada(0, [0, 0])
+                if p == quadrado2:
+                    jogada(1, [120, 0])
+                if p == quadrado3:
+                    jogada(2, [240, 0])
+                if p == quadrado4:
+                    jogada(3, [360, 0])
+                if p == quadrado5:
+                    jogada(4, [0, 120])
+                if p == quadrado6:
+                    jogada(5, [120, 120])
+                if p == quadrado7:
+                    jogada(6, [240, 120])
+                if p == quadrado8:
+                    jogada(7, [360, 120])
+                if p == quadrado9:
+                    jogada(8, [0, 240])
+                if p == quadrado10:
+                    jogada(9, [120, 240])
+                if p == quadrado11:
+                    jogada(10, [240, 240])
+                if p == quadrado12:
+                    jogada(11, [360, 240])
+                if p == quadrado13:
+                    jogada(12, [0, 360])
+                if p == quadrado14:
+                    jogada(13, [120, 360])
+                if p == quadrado15:
+                    jogada(14, [240, 360])
+                if p == quadrado16:
+                    jogada(15, [360, 360])
 
 
 def jogada(ind, pos):
@@ -127,54 +208,87 @@ def jogada(ind, pos):
         pass
     else:  # se o click foi em uma celula vazia, marca a celula e muda a vez pro oponente
         tabuleiro[ind] = ESCOLHA
+        print(ind)
         imp_peca(pos)  # imprime na posição marcada
         if VEZ == 'JOG1':
             VEZ = 'JOG2'
         else:
             VEZ = 'JOG1'
-        JOGADAS += 1
+        print(tabuleiro)
+        # JOGADAS += 1
 
 
 def vitoria(jog):
-    global LINHAVIT
+    global LINHAVIT, DIFICULDADE
     # Testa se um jogador venceu
-    if tabuleiro[0] == jog and tabuleiro[1] == jog and tabuleiro[2] == jog:
-        LINHAVIT = 1
-        return True
-    if tabuleiro[3] == jog and tabuleiro[4] == jog and tabuleiro[5] == jog:
-        LINHAVIT = 2
-        return True
-    if tabuleiro[6] == jog and tabuleiro[7] == jog and tabuleiro[8] == jog:
-        LINHAVIT = 3
-        return True
-    if tabuleiro[0] == jog and tabuleiro[4] == jog and tabuleiro[8] == jog:
-        LINHAVIT = 4
-        return True
-    if tabuleiro[2] == jog and tabuleiro[4] == jog and tabuleiro[6] == jog:
-        LINHAVIT = 5
-        return True
-    if tabuleiro[0] == jog and tabuleiro[3] == jog and tabuleiro[6] == jog:
-        LINHAVIT = 6
-        return True
-    if tabuleiro[1] == jog and tabuleiro[4] == jog and tabuleiro[7] == jog:
-        LINHAVIT = 7
-        return True
-    if tabuleiro[2] == jog and tabuleiro[5] == jog and tabuleiro[8] == jog:
-        LINHAVIT = 8
-        return True
-
+    if DIFICULDADE == 0:
+        if tabuleiro[0] == jog and tabuleiro[1] == jog and tabuleiro[2] == jog:
+            LINHAVIT = 1
+            return True
+        if tabuleiro[3] == jog and tabuleiro[4] == jog and tabuleiro[5] == jog:
+            LINHAVIT = 2
+            return True
+        if tabuleiro[6] == jog and tabuleiro[7] == jog and tabuleiro[8] == jog:
+            LINHAVIT = 3
+            return True
+        if tabuleiro[0] == jog and tabuleiro[4] == jog and tabuleiro[8] == jog:
+            LINHAVIT = 4
+            return True
+        if tabuleiro[2] == jog and tabuleiro[4] == jog and tabuleiro[6] == jog:
+            LINHAVIT = 5
+            return True
+        if tabuleiro[0] == jog and tabuleiro[3] == jog and tabuleiro[6] == jog:
+            LINHAVIT = 6
+            return True
+        if tabuleiro[1] == jog and tabuleiro[4] == jog and tabuleiro[7] == jog:
+            LINHAVIT = 7
+            return True
+        if tabuleiro[2] == jog and tabuleiro[5] == jog and tabuleiro[8] == jog:
+            LINHAVIT = 8
+            return True
+    elif DIFICULDADE == 1:
+        if tabuleiro[0] == jog and tabuleiro[1] == jog and tabuleiro[2] == jog and tabuleiro[3] == jog:
+            LINHAVIT = 9
+            return True
+        if tabuleiro[4] == jog and tabuleiro[5] == jog and tabuleiro[6] == jog and tabuleiro[7] == jog:
+            LINHAVIT = 10
+            return True
+        if tabuleiro[8] == jog and tabuleiro[9] == jog and tabuleiro[10] == jog and tabuleiro[11] == jog:
+            LINHAVIT = 11
+            return True
+        if tabuleiro[12] == jog and tabuleiro[13] == jog and tabuleiro[14] == jog and tabuleiro[15] == jog:
+            LINHAVIT = 12
+            return True
+        if tabuleiro[0] == jog and tabuleiro[5] == jog and tabuleiro[10] == jog and tabuleiro[15] == jog:
+            LINHAVIT = 4
+            return True
+        if tabuleiro[3] == jog and tabuleiro[6] == jog and tabuleiro[9] == jog and tabuleiro[12] == jog:
+            LINHAVIT = 5
+            return True
+        if tabuleiro[0] == jog and tabuleiro[4] == jog and tabuleiro[8] == jog and tabuleiro[12] == jog:
+            LINHAVIT = 13
+            return True
+        if tabuleiro[1] == jog and tabuleiro[5] == jog and tabuleiro[9] == jog and tabuleiro[13] == jog:
+            LINHAVIT = 14
+            return True
+        if tabuleiro[2] == jog and tabuleiro[6] == jog and tabuleiro[10] == jog and tabuleiro[14] == jog:
+            LINHAVIT = 15
+            return True
+        if tabuleiro[3] == jog and tabuleiro[7] == jog and tabuleiro[11] == jog and tabuleiro[15] == jog:
+            LINHAVIT = 16
+            return True
 
 def texto_vitoria(vit):
     if vit == 'EMPATE':
         menssagem = 'NINGUEM VENÇEU'
         texto = fonte1.render(menssagem, True, ex.branco)
         tela.blit(texto, (100, 200))
-        ex.som_empate.play() # som de empate
+        ex.som_empate.play()  # som de empate
     else:
         menssagem = 'Jogador {} venceu!'.format(vit)
         texto = fonte1.render(menssagem, True, ex.branco)
         tela.blit(texto, (100, 200))
-        ex.som_vitoria_2.play() # som de vitória
+        ex.som_vitoria_2.play()  # som de vitória
 
 
 def linha_vitoria(tela):
@@ -219,10 +333,52 @@ def linha_vitoria(tela):
         b = 10
         c = 400
         d = 470
+    elif LINHAVIT == 9:
+        a = 20
+        b = 60
+        c = 460
+        d = 60
+    elif LINHAVIT == 10:
+        a = 20
+        b = 180
+        c = 460
+        d = 180
+    if LINHAVIT == 11:
+        a = 20
+        b = 300
+        c = 460
+        d = 300
+    if LINHAVIT == 12:
+        a = 20
+        b = 420
+        c = 460
+        d = 420
+    if LINHAVIT == 13:
+        a = 60
+        b = 10
+        c = 60
+        d = 470
+    if LINHAVIT == 14:
+        a = 180
+        b = 10
+        c = 180
+        d = 470
+    if LINHAVIT == 15:
+        a = 300
+        b = 10
+        c = 300
+        d = 470
+    if LINHAVIT == 16:
+        a = 420
+        b = 10
+        c = 420
+        d = 470
+
     pygame.draw.line(tela, ex.roxo, (a, b), (c, d), 10)
 
 
 def botao_reset():
+    # Desenta o botão de reset
     global PONTOSO, PONTOSX
     pygame.draw.rect(tela, ex.st_preto, (510, 20, 100, 35))
     b_resete = fonte2.render('RECOMEÇAR', True, ex.vermelho)  # Botão de Reset
@@ -232,16 +388,37 @@ def botao_reset():
         PONTOSO, PONTOSX = 0, 0
 
 
+def botao_dificuldade():
+    global DIFICULDADE
+    # desenha o botão de dificuldade
+    pygame.draw.rect(tela, ex.preto, (490, 220, 60, 50))
+    tela.blit(ex.dific_0_r, (493, 219))
+    pygame.draw.rect(tela, ex.preto, (570, 220, 60, 50))
+    tela.blit(ex.dific_1_r, (575, 219))
+    if event.type == MOUSEBUTTONDOWN and 490 <= posi_mouse[0] <= 550 and 220 <= posi_mouse[1] <= 270:
+        DIFICULDADE = 0
+        resete()
+    if event.type == MOUSEBUTTONDOWN and 570 <= posi_mouse[0] <= 630 and 220 <= posi_mouse[1] <= 270:
+        DIFICULDADE = 1
+        resete()
+
 def resete():
-    global ESTADO, VEZ, ESCOLHA, JOGADAS, LINHAVIT, tabuleiro
+    # Reseta o jogo inteiro
+    global ESTADO, VEZ, ESCOLHA, JOGADAS, LINHAVIT, tabuleiro, DIFICULDADE
     ESTADO = 'JOGANDO'
     VEZ = 'JOG1'
     ESCOLHA = 'X'
     JOGADAS = 0
     LINHAVIT = 0
-    tabuleiro = [1, 2, 3,
-                 4, 5, 6,
-                 7, 8, 9]
+    if DIFICULDADE == 0:
+        tabuleiro = [1, 2, 3,
+                     4, 5, 6,
+                     7, 8, 9]
+    elif DIFICULDADE == 1:
+        tabuleiro = [1, 2, 3, 4,
+                     5, 6, 7, 8,
+                     9, 10, 11, 12,
+                     13, 14, 15, 16]
     tela.fill(ex.preto)
 
 
@@ -264,6 +441,7 @@ while True:
         # JOGO
         janela(tela)  # Cria Janela
         botao_reset()  # Cria e testa o botão reste
+        botao_dificuldade() #Cria e testa o botão de dificuldade
 
         # Testa a vitória
         if vitoria('X'):

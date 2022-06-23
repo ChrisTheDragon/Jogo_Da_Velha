@@ -65,9 +65,16 @@ O_1_peca = pygame.image.load('Imagens/O1.png').convert_alpha()
 O_1_peca_r = pygame.transform.scale(O_1_peca, (160, 160))
 
 X_2_peca = pygame.image.load('Imagens/X2.png').convert_alpha()
-X_2_peca_r = pygame.transform.scale(X_2_peca, (160, 160))
 O_2_peca = pygame.image.load('Imagens/O2.png').convert_alpha()
-O_2_peca_r = pygame.transform.scale(O_2_peca, (160, 160))
 
+
+# Barra Lateral
 Img_lateral = pygame.image.load('Imagens/Barra Lateral.png').convert_alpha()
 Img_lateral_r = pygame.transform.scale(Img_lateral, (160, 480))
+
+# Dificuldade
+dific_0 = pygame.image.load('Imagens/dificuldade_0.png').convert_alpha()
+dific_0_r = pygame.transform.scale(dific_0, (50, 50))
+dific_1 = pygame.image.load('Imagens/dificuldade_1.png').convert_alpha()
+dific_1_r = pygame.transform.scale(dific_1, (50, 50))
+
